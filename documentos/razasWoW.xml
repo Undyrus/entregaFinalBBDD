@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Razas>
+    <Raza introducida_en="Classic" fecha="2004" zona_inicial="Bosque de Elwynn">
+        <Nombre>Humano</Nombre>
+        <Bando>Alianza</Bando>
+        <Origen>Reinos del Este</Origen>
+        <Idioma>Común</Idioma>
+        <Capital>Ventormenta</Capital>
+        <Jefe>Rey Anduin Wrynn</Jefe>
+        <Montura>Caballo</Montura>
+    </Raza>
+    <Raza introducida_en="Classic" fecha="2004" zona_inicial="Durotar">
+        <Nombre>Orco</Nombre>
+        <Bando>Horda</Bando>
+        <Origen>Draenor</Origen>
+        <Idioma>Orco</Idioma>
+        <Capital>Orgrimmar</Capital>
+        <Jefe>Varok Colmillosauro</Jefe>
+        <Montura>Lobo</Montura>
+    </Raza>
+    <Raza introducida_en="Classic" fecha="2004" zona_inicial="Dun Morogh">
+        <Nombre>Enano</Nombre>
+        <Bando>Alianza</Bando>
+        <Origen>Reinos del Este</Origen>
+        <Idioma>Enano</Idioma>
+        <Capital>Forjaz</Capital>
+        <Jefe>Consejo de los Tres Martillos</Jefe>
+        <Montura>Carnero</Montura>
+    </Raza>
+    <Raza introducida_en="Classic" fecha="2004" zona_inicial="Claros de Tirisfal">
+        <Nombre>No-Muerto</Nombre>
+        <Bando>Horda</Bando>
+        <Origen>Reinos del Este</Origen>
+        <Idioma>Viscerálico</Idioma>
+        <Capital>Entrañas</Capital>
+        <Jefe>Dama Oscura Sylvanas Brisaveloz</Jefe>
+        <Montura>Caballo Esquelético</Montura>
+    </Raza>
+    <Raza introducida_en="Classic" fecha="2004" zona_inicial="Teldrassil">
+        <Nombre>Elfo de la Noche</Nombre>
+        <Bando>Alianza</Bando>
+        <Origen>Kalimdor</Origen>
+        <Idioma>Darnassiano</Idioma>
+        <Capital>Darnassus</Capital>
+        <Jefe>Tyrande Susurravientos y Malfurion Tempestira</Jefe>
+        <Montura>Lobo</Montura>
+    </Raza>
+    <Raza introducida_en="Classic" fecha="2004" zona_inicial="Mulgore">
+        <Nombre>Tauren</Nombre>
+        <Bando>Horda</Bando>
+        <Origen>Kalimdor</Origen>
+        <Idioma>Taur-ahe</Idioma>
+        <Capital>Cima del Trueno</Capital>
+        <Jefe>Baine Pezuña de Sangre</Jefe>
+        <Montura>Kodo</Montura>
+    </Raza>
+    <Raza introducida_en="Classic" fecha="2004" zona_inicial="Dun Morogh">
+        <Nombre>Gnomo</Nombre>
+        <Bando>Alianza</Bando>
+        <Origen>Reinos del Este</Origen>
+        <Idioma>Gnomo</Idioma>
+        <Capital>Gnomergan</Capital>
+        <Jefe>Manitas Mayor Gelbin Mekkatorque</Jefe>
+        <Montura>Mecazancudo</Montura>
+    </Raza>
+    <Raza introducida_en="Classic" fecha="2004" zona_inicial="Durotar">
+        <Nombre>Trol</Nombre>
+        <Bando>Horda</Bando>
+        <Origen>Kalimdor</Origen>
+        <Idioma>Trol</Idioma>
+        <Capital>Isla Lanza Negra</Capital>
+        <Jefe>Nadie</Jefe>
+        <Montura>Raptor</Montura>
+    </Raza>
+    <Raza introducida_en="The Burning Crusade" fecha="2007" zona_inicial="Isla Bruma Azur">
+        <Nombre>Draenei</Nombre>
+        <Bando>Alianza</Bando>
+        <Origen>Argus</Origen>
+        <Idioma>Draenei</Idioma>
+        <Capital>El Exodar</Capital>
+        <Jefe>Velen el Profeta</Jefe>
+        <Montura>Elekk</Montura>
+    </Raza>
+    <Raza introducida_en="The Burning Crusade" fecha="2007" zona_inicial="Bosque Canción Eterna">
+        <Nombre>Elfo de la Sangre</Nombre>
+        <Bando>Horda</Bando>
+        <Origen>Reinos del Este</Origen>
+        <Idioma>Thalassiano</Idioma>
+        <Capital>Lunargenta</Capital>
+        <Jefe>Lor'themar Theron</Jefe>
+        <Montura>Halcón Zancudo</Montura>
+    </Raza>
+    <Raza introducida_en="Cataclysm" fecha="2010" zona_inicial="Gilneas">
+        <Nombre>Huargen</Nombre>
+        <Bando>Alianza</Bando>
+        <Origen>Reinos del Este</Origen>
+        <Idioma>Común</Idioma>
+        <Capital>Darnassus</Capital>
+        <Jefe>Rey Genn Cringris</Jefe>
+        <Montura>Galopada Salvaje</Montura>
+    </Raza>
+    <Raza introducida_en="Cataclysm" fecha="2010" zona_inicial="Kezan">
+        <Nombre>Goblin</Nombre>
+        <Bando>Horda</Bando>
+        <Origen>La Vorágine</Origen>
+        <Idioma>Goblin</Idioma>
+        <Capital>Orgrimmar</Capital>
+        <Jefe>Príncipe Mercante Gallywix </Jefe>
+        <Montura>Lobo</Montura>
+    </Raza>
+    <Raza introducida_en="Mists of Pandaria" fecha="2012" zona_inicial="La Isla Errante">
+        <Nombre>Pandaren</Nombre>
+        <Bando>Alianza u Horda</Bando>
+        <Origen>Pandaria</Origen>
+        <Idioma>Pandaren</Idioma>
+        <Capital>Ventormenta u Orgrimmar</Capital>
+        <Jefe>Aysa Canción Etérea o Ji Zarpa Ígnea</Jefe>
+        <Montura>Tortuga dragón</Montura>
+    </Raza>
+</Razas>

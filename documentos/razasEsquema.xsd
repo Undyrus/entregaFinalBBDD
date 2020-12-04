@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="1.0">
+    <xsd:element name="Razas">
+        <xsd:complexType>
+            <xsd:choice maxOccurs="unbounded">
+                <xsd:element name="Raza" minOccurs="0" maxOccurs="unbounded">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="Nombre" type="xsd:string" />
+                            <xsd:element name="Bando" type="xsd:string" />
+                            <xsd:element name="Origen" type="xsd:string" />
+                            <xsd:element name="Idioma" type="xsd:string" />
+                            <xsd:element name="Capital" type="xsd:string" />
+                            <xsd:element name="Jefe" type="xsd:string" />
+                            <xsd:element name="Montura" type="xsd:string" />
+                        </xsd:sequence>
+                        <xsd:attribute name="introducida_en" type="xsd:string"/>
+                        <xsd:attribute name="fecha" type="xsd:string"/>
+                        <xsd:attribute name="zona_inicial" type="xsd:string"/>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>
