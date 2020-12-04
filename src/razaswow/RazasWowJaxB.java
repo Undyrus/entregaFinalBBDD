@@ -25,19 +25,32 @@ public class RazasWowJaxB {
     Razas myRaces;
 
     public boolean openJaxB(File file) {
-
+        
         try {
-            JAXBContext contexto = JAXBContext.newInstance(Razas.class);
-            Unmarshaller u = contexto.createUnmarshaller();
+            JAXBContext context = JAXBContext.newInstance(Razas.class);
+            
+            Unmarshaller u = context.createUnmarshaller();
 
             myRaces = (Razas) u.unmarshal(file);
-
+            
             return true;
         } catch (JAXBException e) {
             return false;
         }
     }
-
+    public String modCombo(){
+        String comboString = "";
+        List<Razas.Raza> raceList = myRaces.getRaza();
+        for (int i = 0; i < raceList.size(); i++) {
+            Raza tempRace = raceList.get(i);
+            comboString = tempRace.getNombre();
+            return comboString;
+            
+                
+         }
+        System.out.println(comboString);
+        return comboString;
+    }
     public Boolean changeJaxB(String raceName, String oldField, String newField) {
         try {
             JAXBContext context = JAXBContext.newInstance(Razas.class);
@@ -46,7 +59,8 @@ public class RazasWowJaxB {
             for (int i = 0; i < raceList.size(); i++) {
                 Raza tempRace = raceList.get(i);
                 if (tempRace.getNombre().equals(raceName)) {
-                    if (tempRace.getBando().equals(oldField) || tempRace.getCapital().equals(oldField) || tempRace.getJefe().equals(oldField)) {
+                    if (tempRace.getBando().equals(oldField) || tempRace.getCapital().equals(oldField) ||
+                            tempRace.getJefe().equals(oldField)) {
                         if (tempRace.getBando().equals(oldField)) {
                             tempRace.setBando(newField);
                         }
