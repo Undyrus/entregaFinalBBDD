@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
-    <system systemId="file:/C:/Users/elram/Documents/NetBeansProjects/razasWow/documentos/razasEsquema.xsd" uri="xml-resources/jaxb/razasWoWBinding/razasEsquema.xsd"/>
-</catalog>
