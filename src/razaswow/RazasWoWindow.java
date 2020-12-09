@@ -17,6 +17,7 @@ public class RazasWoWindow extends javax.swing.JFrame {
 
     RazasWowJaxB gesJAXB = new RazasWowJaxB();
     RazasWowDOM gesDOM = new RazasWowDOM();
+    RazasWowQuery gesQuery = new RazasWowQuery();
     public static File fileXML = new File("documentos/razasWoW.xml");
 
     public RazasWoWindow() {
@@ -33,7 +34,6 @@ public class RazasWoWindow extends javax.swing.JFrame {
     private void initComponents() {
 
         jFrameAddRace = new javax.swing.JFrame();
-        jLabelExpansion = new javax.swing.JLabel();
         jTextFieldExpansion = new javax.swing.JTextField();
         jLabelYear = new javax.swing.JLabel();
         jTextFieldYear = new javax.swing.JTextField();
@@ -55,6 +55,7 @@ public class RazasWoWindow extends javax.swing.JFrame {
         jTextFieldMount = new javax.swing.JTextField();
         jButtonCancelAdd = new javax.swing.JButton();
         jButtonAdd = new javax.swing.JButton();
+        jLabelExpansion = new javax.swing.JLabel();
         jButtonShow = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextAreaShowed = new javax.swing.JTextArea();
@@ -67,6 +68,9 @@ public class RazasWoWindow extends javax.swing.JFrame {
         jComboBoxFieldList = new javax.swing.JComboBox<>();
         jButtonChangeField = new javax.swing.JButton();
         jButtonSwapFrame = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jComboBoxQuery = new javax.swing.JComboBox<>();
+        jButtonQuery = new javax.swing.JButton();
 
         jFrameAddRace.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         jFrameAddRace.addWindowListener(new java.awt.event.WindowAdapter() {
@@ -74,8 +78,6 @@ public class RazasWoWindow extends javax.swing.JFrame {
                 jFrameAddRaceWindowClosed(evt);
             }
         });
-
-        jLabelExpansion.setText("Expansión en la que ha sido introducida la raza");
 
         jLabelYear.setText("Año de introducción");
 
@@ -109,6 +111,8 @@ public class RazasWoWindow extends javax.swing.JFrame {
             }
         });
 
+        jLabelExpansion.setText("Expansión en la que ha sido introducida la raza");
+
         javax.swing.GroupLayout jFrameAddRaceLayout = new javax.swing.GroupLayout(jFrameAddRace.getContentPane());
         jFrameAddRace.getContentPane().setLayout(jFrameAddRaceLayout);
         jFrameAddRaceLayout.setHorizontalGroup(
@@ -117,7 +121,6 @@ public class RazasWoWindow extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jFrameAddRaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextFieldExpansion)
-                    .addComponent(jLabelExpansion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabelYear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jTextFieldYear, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabelZone, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -139,15 +142,18 @@ public class RazasWoWindow extends javax.swing.JFrame {
                     .addGroup(jFrameAddRaceLayout.createSequentialGroup()
                         .addComponent(jButtonCancelAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-                        .addComponent(jButtonAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jButtonAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jFrameAddRaceLayout.createSequentialGroup()
+                        .addComponent(jLabelExpansion)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jFrameAddRaceLayout.setVerticalGroup(
             jFrameAddRaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jFrameAddRaceLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(16, 16, 16)
                 .addComponent(jLabelExpansion)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextFieldExpansion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabelYear)
@@ -248,6 +254,19 @@ public class RazasWoWindow extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setText("Hacer una consulta");
+
+        jComboBoxQuery.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona una consulta", "Nombre de las razas", "Razas de la Alianza", "Razas de la Horda" }));
+        jComboBoxQuery.setEnabled(false);
+
+        jButtonQuery.setText("Realizar consulta");
+        jButtonQuery.setEnabled(false);
+        jButtonQuery.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonQueryActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -258,7 +277,7 @@ public class RazasWoWindow extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(jLabelChangeField)
                                 .addGap(42, 42, 42)
@@ -272,7 +291,13 @@ public class RazasWoWindow extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jTextFieldNewField)
                                     .addComponent(jLabelNewField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButtonChangeField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                    .addComponent(jButtonChangeField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jComboBoxQuery, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButtonQuery)))
                         .addComponent(jButtonShow, javax.swing.GroupLayout.Alignment.TRAILING))
                     .addComponent(jButtonSwapFrame, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
@@ -301,6 +326,12 @@ public class RazasWoWindow extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jComboBoxFieldList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButtonChangeField))
+                        .addGap(38, 38, 38)
+                        .addComponent(jLabel1)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jComboBoxQuery, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButtonQuery))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButtonSwapFrame)))
                 .addContainerGap())
@@ -315,16 +346,26 @@ public class RazasWoWindow extends javax.swing.JFrame {
             jButtonInfo.setEnabled(true);
             jButtonChangeField.setEnabled(rootPaneCheckingEnabled);
             jButtonSwapFrame.setEnabled(true);
-            jComboBoxFieldList.setEnabled(true);
+            
             jTextFieldOldField.setEnabled(true);
             jTextFieldNewField.setEnabled(true);
+
+            jComboBoxFieldList.removeAll();
+            jComboBoxFieldList.addItem("Seleccionar Raza");
+            RazasWowSAX.saxHandler.comboArray.forEach((string) -> {
+                jComboBoxFieldList.addItem(string);
+            });
+                    
+            jComboBoxFieldList.setEnabled(true);
+            jButtonQuery.setEnabled(true);
+            jComboBoxQuery.setEnabled(true);
         } else {
             JOptionPane.showMessageDialog(null, "Error al abrir el archivo :(", "ERROR", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jButtonShowActionPerformed
 
     private void jButtonInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonInfoActionPerformed
-        JOptionPane.showMessageDialog(null, "Puedes modificar: Facción de la raza, Capital de la raza y Líder de la raza", "INFO", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Puedes modificar: FacciÃ³n de la raza, Capital de la raza y LÃ­der de la raza", "INFO", JOptionPane.ERROR_MESSAGE);
     }//GEN-LAST:event_jButtonInfoActionPerformed
 
     private void jComboBoxFieldListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxFieldListActionPerformed
@@ -382,17 +423,40 @@ public class RazasWoWindow extends javax.swing.JFrame {
         if (gesDOM.openDOM(fileXML) == true) {
             if (checkText() == false) {
                 JOptionPane.showMessageDialog(null, "¡Rellena todos los campos!", "ERROR", JOptionPane.ERROR_MESSAGE);
-            } else if (gesDOM.addDOM(name, faction, origin, lenguage, capital, leader, mount, expansion, year, zone) == false) {
-                JOptionPane.showMessageDialog(null, "Error al añadir raza", "ERROR", JOptionPane.ERROR_MESSAGE);
+            } else if (gesDOM.addDOM(name, faction, origin, lenguage, capital, leader, mount, expansion, year, zone)) {
+                if (gesDOM.saveDOM()) {
+                    jFrameAddRace.dispose();
+                } else {
+                    JOptionPane.showMessageDialog(null, "Error al añadir raza", "ERROR", JOptionPane.ERROR_MESSAGE);
+                }
             } else {
-                String result = gesDOM.runDOM();
-                this.jTextAreaShowed.setText(result);
+                JOptionPane.showMessageDialog(null, "Bruh", "ERROR", JOptionPane.ERROR_MESSAGE);
             }
         }
-        else{
-            JOptionPane.showMessageDialog(null, "Bruh", "ERROR", JOptionPane.ERROR_MESSAGE);
-        }
     }//GEN-LAST:event_jButtonAddActionPerformed
+
+    private void jButtonQueryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonQueryActionPerformed
+        if (jComboBoxQuery.getSelectedIndex() == 0) {
+            if (gesQuery.openXPath(fileXML)) {
+                JOptionPane.showMessageDialog(null, "Selecciona una consulta", "ERROR", JOptionPane.ERROR_MESSAGE);
+            }
+        } else if (jComboBoxQuery.getSelectedIndex() == 1) {
+            if (gesQuery.openXPath(fileXML)) {
+                jTextAreaShowed.setText("Nombres de raza: \n" + gesQuery.executeXPath("//Nombre"));
+            }
+        } else if (jComboBoxQuery.getSelectedIndex() == 2) {
+            if (gesQuery.openXPath(fileXML)) {
+                jTextAreaShowed.setText("Razas de la Alianza: \n" + gesQuery.executeXPath("/Razas/Raza[Bando='Alianza']/Nombre"));
+            }
+        } else if (jComboBoxQuery.getSelectedIndex() == 3) {
+            if (gesQuery.openXPath(fileXML)) {
+                jTextAreaShowed.setText("Razas de la Horda: \n" + gesQuery.executeXPath("/Razas/Raza[Bando='Horda']/Nombre"));
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Error en la consulta", "ERROR", JOptionPane.ERROR_MESSAGE);
+        }
+
+    }//GEN-LAST:event_jButtonQueryActionPerformed
     public void removeText() {
         jTextFieldExpansion.setText("");
         jTextFieldYear.setText("");
@@ -447,10 +511,13 @@ public class RazasWoWindow extends javax.swing.JFrame {
     private javax.swing.JButton jButtonCancelAdd;
     private javax.swing.JButton jButtonChangeField;
     private javax.swing.JButton jButtonInfo;
+    private javax.swing.JButton jButtonQuery;
     private javax.swing.JButton jButtonShow;
     private javax.swing.JButton jButtonSwapFrame;
     private javax.swing.JComboBox<String> jComboBoxFieldList;
+    private javax.swing.JComboBox<String> jComboBoxQuery;
     private javax.swing.JFrame jFrameAddRace;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelCapital;
     private javax.swing.JLabel jLabelChangeField;
     private javax.swing.JLabel jLabelExpansion;

@@ -5,7 +5,10 @@
  */
 package razaswow;
 
+import com.sun.org.apache.xml.internal.serialize.OutputFormat;
+import com.sun.org.apache.xml.internal.serialize.XMLSerializer;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -159,5 +162,24 @@ public class RazasWowDOM {
         } catch (DOMException e) {
             return false;
         }
+    }
+     public boolean saveDOM() {
+
+        try {
+
+            File archivo_xml = new File("documentos/razasWoW.xml");
+            OutputFormat format = new OutputFormat(doc);
+            format.setIndenting(true);
+            XMLSerializer serializer = new XMLSerializer(new FileOutputStream(archivo_xml), format);
+            serializer.serialize(doc);
+
+            return true;
+
+        } catch (Exception e) {
+
+            return false;
+
+        }
+
     }
 }

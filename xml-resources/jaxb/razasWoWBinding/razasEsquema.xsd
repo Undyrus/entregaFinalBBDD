@@ -14,7 +14,7 @@
                             <xsd:element name="Jefe" type="xsd:string" />
                             <xsd:element name="Montura" type="xsd:string" />
                         </xsd:sequence>
-                        <xsd:attribute name="introducida_en" type="xsd:byte"/>
+                        <xsd:attribute name="introducida_en" type="xsd:string"/>
                         <xsd:attribute name="fecha" type="xsd:string"/>
                         <xsd:attribute name="zona_inicial" type="xsd:string"/>
                     </xsd:complexType>

@@ -2,6 +2,7 @@ package razaswow;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
@@ -53,22 +54,33 @@ public class RazasWowSAX {
     static class saxHandler extends DefaultHandler {
 
         String resultChain = "";
-
+        boolean isName = false;
+        public static ArrayList<String> comboArray = new ArrayList<>( );
         @Override
         public void characters(char[] ch, int start, int length) throws SAXException {
-
+            String comboBox = "";
+            
             for (int i = start; i < length + start; i++) {
                 resultChain += ch[i];
+                comboBox +=ch[i];
             }
             resultChain = resultChain.trim() + "\n";
-
+            if(isName&&!comboArray.contains(comboBox.trim())){
+                comboArray.add(comboBox.trim());
+                System.out.println(comboBox);
+                
+            }
         }
 
         @Override
         public void endElement(String uri, String localName, String qName) throws SAXException {
             if (qName.equals("Raza")) {
                 resultChain = resultChain + "--------------------------------------------------------------------------------------------\n";
+                
+            } else  if (qName.equals("Nombre")) {
+                isName = false;
             }
+            
         }
 
         //Este método se ejecuta cuando se encuentra un elemento de apertura
@@ -82,6 +94,7 @@ public class RazasWowSAX {
                 resultChain += "Zona inicial de la raza: " + attributes.getValue(attributes.getQName(2).trim()) + "\n";
             } else if (qName.equals("Nombre")) {
                 resultChain += "Nombre de la raza: ";
+                isName = true;
             } else if (qName.equals("Bando")) {
                 resultChain += "Facción de la raza: ";
             } else if (qName.equals("Origen")) {
@@ -94,6 +107,8 @@ public class RazasWowSAX {
                 resultChain += "Líder de la raza: ";
             } else if (qName.equals("Montura")) {
                 resultChain += "Montura de la raza: ";
+            } else if (qName.equals("Razas")){
+                comboArray = new ArrayList<>();
             }
         }
     }
